@@ -1,49 +1,155 @@
-# Getting Started with Create React App
+# 🌟 Arkham Horror Scenario Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern web application for managing Arkham Horror scenarios and campaigns, built with React, TypeScript, Tailwind CSS, and Supabase.
 
-## Available Scripts
+![Arkham Horror](https://img.shields.io/badge/Arkham-Horror-8B5A3C?style=for-the-badge)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 
-In the project directory, you can run:
+## 🎯 Features
 
-### `npm start`
+- 🔐 **User Authentication** - Secure signup/login with email confirmation
+- 🎨 **Dark Theme** - Atmospheric Arkham Horror-inspired design
+- 📱 **Responsive Design** - Works perfectly on desktop and mobile
+- ⚡ **Modern Stack** - React 19, TypeScript, Tailwind CSS
+- 🛡️ **Type Safety** - Fully typed with TypeScript
+- 🚀 **Fast Loading** - Optimized performance with modern React patterns
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React 19, TypeScript
+- **Styling**: Tailwind CSS with custom Arkham Horror theme
+- **Backend**: Supabase (Authentication, Database)
+- **Build Tool**: Create React App
+- **Fonts**: Google Fonts (Creepster, Inter)
 
-### `npm test`
+## 🚀 Quick Start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Node.js 18+ 
+- npm or yarn
+- Supabase account
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/arkham-horror-scenario-manager.git
+   cd arkham-horror-scenario-manager
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Update `.env.local` with your Supabase credentials:
+   ```env
+   REACT_APP_SUPABASE_URL=your_supabase_project_url
+   REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Configure Supabase**
+   - In your Supabase dashboard, go to Authentication > URL Configuration
+   - Set Site URL: `http://localhost:3000`
+   - Add Redirect URL: `http://localhost:3000/auth/confirm`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📁 Project Structure
 
-## Learn More
+```
+src/
+├── components/           # React components
+│   ├── Login.tsx        # Login form
+│   ├── Signup.tsx       # Registration form
+│   ├── Dashboard.tsx    # Main dashboard
+│   ├── AuthConfirm.tsx  # Email confirmation handler
+│   └── LoadingSpinner.tsx
+├── contexts/            # React contexts
+│   └── AuthContext.tsx  # Authentication context
+├── supabase/           # Supabase configuration
+│   └── client.ts       # Supabase client setup
+├── types/              # TypeScript type definitions
+│   └── index.ts        # Shared types
+└── App.tsx             # Main application component
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎨 Design System
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Colors
+- **arkham-dark**: `#1a1a2e` - Primary dark background
+- **arkham-purple**: `#16213e` - Secondary dark purple
+- **arkham-blue**: `#0f3460` - Deep blue accents
+- **arkham-gold**: `#e94560` - Primary accent color
+- **arkham-light**: `#f5f7fa` - Light text color
+
+### Typography
+- **Headers**: Creepster (horror theme)
+- **Body**: Inter (modern, readable)
+
+## 🔧 Available Scripts
+
+- `npm start` - Start development server
+- `npm build` - Build for production
+- `npm test` - Run tests
+- `npm run eject` - Eject from Create React App (one-way operation)
+
+## 🚦 Authentication Flow
+
+1. **Registration**: User signs up with email and password
+2. **Email Confirmation**: Supabase sends confirmation email
+3. **Verification**: User clicks link to verify account
+4. **Login**: User can now log in with credentials
+5. **Dashboard**: Access to the main application
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Set environment variables in Vercel dashboard
+4. Update Supabase URLs for production
+
+### Other Platforms
+The app can be deployed to any static hosting service like Netlify, AWS S3, or GitHub Pages.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🎮 About Arkham Horror
+
+This application is inspired by the Arkham Horror board game series by Fantasy Flight Games. It's designed to help players manage their campaigns and scenarios in the cosmic horror universe created by H.P. Lovecraft.
+
+## 🐛 Bug Reports & Feature Requests
+
+Please use the [GitHub Issues](https://github.com/YOUR_USERNAME/arkham-horror-scenario-manager/issues) to report bugs or request features.
+
+---
+
+**Made with 🖤 for the Arkham Horror community**
 
 ### Code Splitting
 
