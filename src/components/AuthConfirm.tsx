@@ -48,21 +48,22 @@ const AuthConfirm: React.FC = () => {
 
   if (status === "loading") {
     return (
-      <div 
+      <div
         className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23001122"/><circle cx="20" cy="30" r="2" fill="%23003366" opacity="0.3"/><circle cx="80" cy="70" r="1.5" fill="%23004488" opacity="0.2"/><path d="M10,10 Q50,30 90,10 T90,90 Q50,70 10,90 T10,10" fill="none" stroke="%23002244" stroke-width="0.5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23001122"/><circle cx="20" cy="30" r="2" fill="%23003366" opacity="0.3"/><circle cx="80" cy="70" r="1.5" fill="%23004488" opacity="0.2"/><path d="M10,10 Q50,30 90,10 T90,90 Q50,70 10,90 T10,10" fill="none" stroke="%23002244" stroke-width="0.5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>')`,
         }}
       >
-        <div 
+        <div
           className="bg-gradient-to-b from-amber-50 to-amber-100 border-4 border-amber-800/60 rounded-lg relative overflow-hidden p-8 text-center"
           style={{
-            boxShadow: 'inset 0 0 50px rgba(139, 69, 19, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5)',
+            boxShadow:
+              "inset 0 0 50px rgba(139, 69, 19, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5)",
             background: `
               linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0%, transparent 100%),
               linear-gradient(135deg, rgba(160, 82, 45, 0.03) 0%, transparent 100%),
               linear-gradient(to bottom, #fefce8 0%, #fef3c7 50%, #fde68a 100%)
-            `
+            `,
           }}
         >
           <LoadingSpinner size="lg" color="gold" />
@@ -78,40 +79,51 @@ const AuthConfirm: React.FC = () => {
   }
 
   return (
-    <div 
+    <div
       className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center p-4"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23001122"/><circle cx="20" cy="30" r="2" fill="%23003366" opacity="0.3"/><circle cx="80" cy="70" r="1.5" fill="%23004488" opacity="0.2"/><path d="M10,10 Q50,30 90,10 T90,90 Q50,70 10,90 T10,10" fill="none" stroke="%23002244" stroke-width="0.5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>')`
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23001122"/><circle cx="20" cy="30" r="2" fill="%23003366" opacity="0.3"/><circle cx="80" cy="70" r="1.5" fill="%23004488" opacity="0.2"/><path d="M10,10 Q50,30 90,10 T90,90 Q50,70 10,90 T10,10" fill="none" stroke="%23002244" stroke-width="0.5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>')`,
       }}
     >
       {/* Decorative corners */}
-      <div className="absolute top-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
-      <div className="absolute top-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
-      <div className="absolute bottom-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
-      <div className="absolute bottom-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
+      <div className="absolute top-4 left-4 text-amber-600 text-2xl opacity-70">
+        ⚜
+      </div>
+      <div className="absolute top-4 right-4 text-amber-600 text-2xl opacity-70">
+        ⚜
+      </div>
+      <div className="absolute bottom-4 left-4 text-amber-600 text-2xl opacity-70">
+        ⚜
+      </div>
+      <div className="absolute bottom-4 right-4 text-amber-600 text-2xl opacity-70">
+        ⚜
+      </div>
 
       <div className="w-full max-w-md">
-        <div 
+        <div
           className="bg-gradient-to-b from-amber-50 to-amber-100 border-4 border-amber-800/60 rounded-lg relative overflow-hidden text-center"
           style={{
-            boxShadow: 'inset 0 0 50px rgba(139, 69, 19, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5)',
+            boxShadow:
+              "inset 0 0 50px rgba(139, 69, 19, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5)",
             background: `
               linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0%, transparent 100%),
               linear-gradient(135deg, rgba(160, 82, 45, 0.03) 0%, transparent 100%),
               linear-gradient(to bottom, #fefce8 0%, #fef3c7 50%, #fde68a 100%)
-            `
+            `,
           }}
         >
           {/* Decorative border pattern */}
           <div className="absolute inset-0 border-8 border-amber-800/20 rounded-lg pointer-events-none"></div>
-          
+
           {/* Header */}
           <div className="relative">
             <div className="bg-gradient-to-r from-amber-800/10 via-amber-700/20 to-amber-800/10 py-4 border-b-2 border-amber-800/30">
               <div className="flex items-center justify-center gap-4">
                 <div className="text-amber-800 text-lg">⟨</div>
                 <h1 className="text-2xl font-serif font-bold text-amber-900 text-center">
-                  {status === "success" ? "¡Bienvenido!" : "Error de Confirmación"}
+                  {status === "success"
+                    ? "¡Bienvenido!"
+                    : "Error de Confirmación"}
                 </h1>
                 <div className="text-amber-800 text-lg">⟩</div>
               </div>
@@ -153,7 +165,7 @@ const AuthConfirm: React.FC = () => {
                   </svg>
                 </div>
               )}
-              
+
               <p className="text-amber-800 font-medium mb-4">{message}</p>
             </div>
 
@@ -170,7 +182,9 @@ const AuthConfirm: React.FC = () => {
                        shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
             >
               <span className="text-amber-900 font-semibold text-lg">
-                {status === "success" ? "Ir al Panel Principal" : "Volver al Login"}
+                {status === "success"
+                  ? "Ir al Panel Principal"
+                  : "Volver al Login"}
               </span>
             </button>
           </div>
