@@ -53,98 +53,143 @@ const Login: React.FC<LoginProps> = ({ onSwitchToSignup }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-arkham-dark via-arkham-purple to-arkham-blue p-4">
-      <div className="bg-arkham-purple/30 backdrop-blur-lg border border-arkham-gold/20 rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-horror text-arkham-gold mb-2">
-            Arkham Horror
-          </h1>
-          <p className="text-arkham-light/70 font-body">Scenario Manager</p>
-        </div>
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center p-4"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23001122"/><circle cx="20" cy="30" r="2" fill="%23003366" opacity="0.3"/><circle cx="80" cy="70" r="1.5" fill="%23004488" opacity="0.2"/><path d="M10,10 Q50,30 90,10 T90,90 Q50,70 10,90 T10,10" fill="none" stroke="%23002244" stroke-width="0.5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>')`
+      }}
+    >
+      {/* Decorative corners */}
+      <div className="absolute top-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
+      <div className="absolute top-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
+      <div className="absolute bottom-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
+      <div className="absolute bottom-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          {error && (
-            <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-lg text-sm">
-              {error}
+      <div className="w-full max-w-md">
+        {/* Parchment-style login panel */}
+        <div 
+          className="bg-gradient-to-b from-amber-50 to-amber-100 border-4 border-amber-800/60 rounded-lg relative overflow-hidden"
+          style={{
+            boxShadow: 'inset 0 0 50px rgba(139, 69, 19, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5)',
+            background: `
+              linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0%, transparent 100%),
+              linear-gradient(135deg, rgba(160, 82, 45, 0.03) 0%, transparent 100%),
+              linear-gradient(to bottom, #fefce8 0%, #fef3c7 50%, #fde68a 100%)
+            `
+          }}
+        >
+          {/* Decorative border pattern */}
+          <div className="absolute inset-0 border-8 border-amber-800/20 rounded-lg pointer-events-none"></div>
+          
+          {/* Header with ornamental design */}
+          <div className="relative">
+            <div className="bg-gradient-to-r from-amber-800/10 via-amber-700/20 to-amber-800/10 py-4 border-b-2 border-amber-800/30">
+              <div className="flex items-center justify-center gap-4">
+                <div className="text-amber-800 text-lg">⟨</div>
+                <h1 className="text-2xl font-serif font-bold text-amber-900 text-center">
+                  Iniciar Sesión
+                </h1>
+                <div className="text-amber-800 text-lg">⟩</div>
+              </div>
             </div>
-          )}
-
-          <div className="space-y-4">
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-arkham-light/80 mb-2"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Enter your email"
-                value={credentials.email}
-                onChange={handleEmailChange}
-                required
-                disabled={isLoading}
-                className="w-full px-4 py-3 bg-arkham-dark/50 border border-arkham-gold/30 rounded-lg 
-                         text-arkham-light placeholder-arkham-light/50 
-                         focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:border-arkham-gold
-                         transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-arkham-light/80 mb-2"
-              >
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                placeholder="Enter your password"
-                value={credentials.password}
-                onChange={handlePasswordChange}
-                required
-                disabled={isLoading}
-                className="w-full px-4 py-3 bg-arkham-dark/50 border border-arkham-gold/30 rounded-lg 
-                         text-arkham-light placeholder-arkham-light/50 
-                         focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:border-arkham-gold
-                         transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              />
+            
+            {/* Subtitle */}
+            <div className="py-3 text-center border-b border-amber-800/20">
+              <p className="text-amber-800 font-medium">
+                Arkham Horror - Scenario Manager
+              </p>
             </div>
           </div>
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-arkham-gold hover:bg-arkham-gold/90 text-white font-semibold py-3 px-4 
-                     rounded-lg transition-all duration-200 transform hover:scale-[1.02] 
-                     focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:ring-offset-2 focus:ring-offset-arkham-purple
-                     shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
-                     flex items-center justify-center gap-2"
-          >
-            {isLoading ? (
-              <>
-                <LoadingSpinner size="sm" color="gold" />
-                <span>Entering...</span>
-              </>
-            ) : (
-              "Enter the Darkness"
-            )}
-          </button>
-        </form>
+          {/* Form content */}
+          <div className="p-8">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {error && (
+                <div className="bg-red-100 border-2 border-red-400 text-red-800 px-4 py-3 rounded-lg text-sm font-medium">
+                  {error}
+                </div>
+              )}
 
-        <div className="mt-6 text-center">
-          <p className="text-arkham-light/60 text-sm">
-            Don't have an account?{" "}
-            <button
-              onClick={onSwitchToSignup}
-              className="text-arkham-gold hover:text-arkham-gold/80 font-medium transition-colors"
-            >
-              Sign up
-            </button>
-          </p>
+              <div className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-amber-900 mb-2"
+                  >
+                    Correo Electrónico
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Introduce tu correo"
+                    value={credentials.email}
+                    onChange={handleEmailChange}
+                    required
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-lg 
+                             text-amber-900 placeholder-amber-600 
+                             focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500
+                             transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+                             font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-semibold text-amber-900 mb-2"
+                  >
+                    Contraseña
+                  </label>
+                  <input
+                    id="password"
+                    type="password"
+                    placeholder="Introduce tu contraseña"
+                    value={credentials.password}
+                    onChange={handlePasswordChange}
+                    required
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-lg 
+                             text-amber-900 placeholder-amber-600 
+                             focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500
+                             transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+                             font-medium"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-gradient-to-b from-amber-200 to-amber-300 hover:from-amber-300 hover:to-amber-400 
+                         border-2 border-amber-800/60 rounded-lg py-4 px-6 transition-all duration-200
+                         shadow-md hover:shadow-lg transform hover:-translate-y-0.5
+                         disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
+                         flex items-center justify-center gap-2"
+              >
+                {isLoading ? (
+                  <>
+                    <LoadingSpinner size="sm" color="gold" />
+                    <span className="text-amber-900 font-semibold text-lg">Entrando...</span>
+                  </>
+                ) : (
+                  <span className="text-amber-900 font-semibold text-lg">Entrar</span>
+                )}
+              </button>
+            </form>
+
+            <div className="mt-6 text-center">
+              <p className="text-amber-800 text-sm">
+                ¿No tienes cuenta?{" "}
+                <button
+                  onClick={onSwitchToSignup}
+                  className="text-amber-700 hover:text-amber-600 font-semibold transition-colors underline"
+                >
+                  Registrarse
+                </button>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -73,56 +73,90 @@ const Signup: React.FC<SignupProps> = ({ onSwitchToLogin }) => {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-arkham-dark via-arkham-purple to-arkham-blue p-4">
-        <div className="bg-arkham-purple/30 backdrop-blur-lg border border-arkham-gold/20 rounded-2xl shadow-2xl p-8 w-full max-w-md text-center">
-          <div className="mb-6">
-            <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg
-                className="w-8 h-8 text-green-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-            <h1 className="text-2xl font-horror text-arkham-gold mb-2">
-              Check Your Email
-            </h1>
-            <p className="text-arkham-light/70 font-body mb-4">
-              We've sent you a confirmation email. Please click the link in your
-              email to activate your investigator account.
-            </p>
-            <p className="text-arkham-light/60 text-sm">
-              Don't see the email? Check your spam folder or try registering
-              again.
-            </p>
-          </div>
+      <div 
+        className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center p-4"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23001122"/><circle cx="20" cy="30" r="2" fill="%23003366" opacity="0.3"/><circle cx="80" cy="70" r="1.5" fill="%23004488" opacity="0.2"/><path d="M10,10 Q50,30 90,10 T90,90 Q50,70 10,90 T10,10" fill="none" stroke="%23002244" stroke-width="0.5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>')`
+        }}
+      >
+        {/* Decorative corners */}
+        <div className="absolute top-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
+        <div className="absolute top-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
+        <div className="absolute bottom-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
+        <div className="absolute bottom-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
 
-          <div className="flex gap-3">
-            <button
-              onClick={() => setSuccess(false)}
-              className="flex-1 bg-arkham-purple/50 hover:bg-arkham-purple/70 border border-arkham-gold/30 text-arkham-light font-semibold py-3 px-4 
-                       rounded-lg transition-all duration-200 transform hover:scale-[1.02] 
-                       focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:ring-offset-2 focus:ring-offset-arkham-purple
-                       shadow-lg hover:shadow-xl"
-            >
-              Try Again
-            </button>
-            <button
-              onClick={() => (window.location.href = "/")}
-              className="flex-1 bg-arkham-gold hover:bg-arkham-gold/90 text-white font-semibold py-3 px-4 
-                       rounded-lg transition-all duration-200 transform hover:scale-[1.02] 
-                       focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:ring-offset-2 focus:ring-offset-arkham-purple
-                       shadow-lg hover:shadow-xl"
-            >
-              Back to Login
-            </button>
+        <div className="w-full max-w-md">
+          <div 
+            className="bg-gradient-to-b from-amber-50 to-amber-100 border-4 border-amber-800/60 rounded-lg relative overflow-hidden text-center"
+            style={{
+              boxShadow: 'inset 0 0 50px rgba(139, 69, 19, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5)',
+              background: `
+                linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0%, transparent 100%),
+                linear-gradient(135deg, rgba(160, 82, 45, 0.03) 0%, transparent 100%),
+                linear-gradient(to bottom, #fefce8 0%, #fef3c7 50%, #fde68a 100%)
+              `
+            }}
+          >
+            {/* Decorative border pattern */}
+            <div className="absolute inset-0 border-8 border-amber-800/20 rounded-lg pointer-events-none"></div>
+            
+            {/* Header */}
+            <div className="relative">
+              <div className="bg-gradient-to-r from-amber-800/10 via-amber-700/20 to-amber-800/10 py-4 border-b-2 border-amber-800/30">
+                <div className="flex items-center justify-center gap-4">
+                  <div className="text-amber-800 text-lg">⟨</div>
+                  <h1 className="text-2xl font-serif font-bold text-amber-900 text-center">
+                    ¡Registro Exitoso!
+                  </h1>
+                  <div className="text-amber-800 text-lg">⟩</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-green-200 border-2 border-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-8 h-8 text-green-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <p className="text-amber-800 font-medium mb-4">
+                  Hemos enviado un correo de confirmación a tu dirección de email.
+                </p>
+                <p className="text-amber-700 text-sm">
+                  Por favor, haz clic en el enlace del correo para activar tu cuenta de investigador.
+                </p>
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setSuccess(false)}
+                  className="flex-1 bg-gradient-to-b from-amber-100 to-amber-200 hover:from-amber-200 hover:to-amber-300 
+                           border-2 border-amber-600/60 rounded-lg py-3 px-4 transition-all duration-200
+                           shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                >
+                  <span className="text-amber-900 font-semibold">Intentar de Nuevo</span>
+                </button>
+                <button
+                  onClick={() => (window.location.href = "/")}
+                  className="flex-1 bg-gradient-to-b from-amber-200 to-amber-300 hover:from-amber-300 hover:to-amber-400 
+                           border-2 border-amber-800/60 rounded-lg py-3 px-4 transition-all duration-200
+                           shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                >
+                  <span className="text-amber-900 font-semibold">Volver al Login</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -130,144 +164,189 @@ const Signup: React.FC<SignupProps> = ({ onSwitchToLogin }) => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-arkham-dark via-arkham-purple to-arkham-blue p-4">
-      <div className="bg-arkham-purple/30 backdrop-blur-lg border border-arkham-gold/20 rounded-2xl shadow-2xl p-8 w-full max-w-md">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-horror text-arkham-gold mb-2">
-            Join the Investigation
-          </h1>
-          <p className="text-arkham-light/70 font-body">
-            Create your investigator profile
-          </p>
-        </div>
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center p-4"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="paper" patternUnits="userSpaceOnUse" width="100" height="100"><rect width="100" height="100" fill="%23001122"/><circle cx="20" cy="30" r="2" fill="%23003366" opacity="0.3"/><circle cx="80" cy="70" r="1.5" fill="%23004488" opacity="0.2"/><path d="M10,10 Q50,30 90,10 T90,90 Q50,70 10,90 T10,10" fill="none" stroke="%23002244" stroke-width="0.5" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23paper)"/></svg>')`
+      }}
+    >
+      {/* Decorative corners */}
+      <div className="absolute top-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
+      <div className="absolute top-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
+      <div className="absolute bottom-4 left-4 text-amber-600 text-2xl opacity-70">⚜</div>
+      <div className="absolute bottom-4 right-4 text-amber-600 text-2xl opacity-70">⚜</div>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          {error && (
-            <div className="bg-red-500/20 border border-red-500/50 text-red-200 px-4 py-3 rounded-lg text-sm">
-              {error}
+      <div className="w-full max-w-md">
+        {/* Parchment-style signup panel */}
+        <div 
+          className="bg-gradient-to-b from-amber-50 to-amber-100 border-4 border-amber-800/60 rounded-lg relative overflow-hidden"
+          style={{
+            boxShadow: 'inset 0 0 50px rgba(139, 69, 19, 0.1), 0 10px 30px rgba(0, 0, 0, 0.5)',
+            background: `
+              linear-gradient(45deg, rgba(139, 69, 19, 0.05) 0%, transparent 100%),
+              linear-gradient(135deg, rgba(160, 82, 45, 0.03) 0%, transparent 100%),
+              linear-gradient(to bottom, #fefce8 0%, #fef3c7 50%, #fde68a 100%)
+            `
+          }}
+        >
+          {/* Decorative border pattern */}
+          <div className="absolute inset-0 border-8 border-amber-800/20 rounded-lg pointer-events-none"></div>
+          
+          {/* Header with ornamental design */}
+          <div className="relative">
+            <div className="bg-gradient-to-r from-amber-800/10 via-amber-700/20 to-amber-800/10 py-4 border-b-2 border-amber-800/30">
+              <div className="flex items-center justify-center gap-4">
+                <div className="text-amber-800 text-lg">⟨</div>
+                <h1 className="text-2xl font-serif font-bold text-amber-900 text-center">
+                  Registro
+                </h1>
+                <div className="text-amber-800 text-lg">⟩</div>
+              </div>
             </div>
-          )}
-
-          <div className="space-y-4">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-arkham-light/80 mb-2"
-              >
-                Investigator Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Enter your name"
-                value={credentials.name}
-                onChange={handleInputChange("name")}
-                required
-                disabled={isLoading}
-                className="w-full px-4 py-3 bg-arkham-dark/50 border border-arkham-gold/30 rounded-lg 
-                         text-arkham-light placeholder-arkham-light/50 
-                         focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:border-arkham-gold
-                         transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="signup-email"
-                className="block text-sm font-medium text-arkham-light/80 mb-2"
-              >
-                Email
-              </label>
-              <input
-                id="signup-email"
-                type="email"
-                placeholder="Enter your email"
-                value={credentials.email}
-                onChange={handleInputChange("email")}
-                required
-                disabled={isLoading}
-                className="w-full px-4 py-3 bg-arkham-dark/50 border border-arkham-gold/30 rounded-lg 
-                         text-arkham-light placeholder-arkham-light/50 
-                         focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:border-arkham-gold
-                         transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="signup-password"
-                className="block text-sm font-medium text-arkham-light/80 mb-2"
-              >
-                Password
-              </label>
-              <input
-                id="signup-password"
-                type="password"
-                placeholder="Create a password"
-                value={credentials.password}
-                onChange={handleInputChange("password")}
-                required
-                disabled={isLoading}
-                className="w-full px-4 py-3 bg-arkham-dark/50 border border-arkham-gold/30 rounded-lg 
-                         text-arkham-light placeholder-arkham-light/50 
-                         focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:border-arkham-gold
-                         transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="confirm-password"
-                className="block text-sm font-medium text-arkham-light/80 mb-2"
-              >
-                Confirm Password
-              </label>
-              <input
-                id="confirm-password"
-                type="password"
-                placeholder="Confirm your password"
-                value={credentials.confirmPassword}
-                onChange={handleInputChange("confirmPassword")}
-                required
-                disabled={isLoading}
-                className="w-full px-4 py-3 bg-arkham-dark/50 border border-arkham-gold/30 rounded-lg 
-                         text-arkham-light placeholder-arkham-light/50 
-                         focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:border-arkham-gold
-                         transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              />
+            
+            {/* Subtitle */}
+            <div className="py-3 text-center border-b border-amber-800/20">
+              <p className="text-amber-800 font-medium">
+                Únete a la Investigación
+              </p>
             </div>
           </div>
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-arkham-gold hover:bg-arkham-gold/90 text-white font-semibold py-3 px-4 
-                     rounded-lg transition-all duration-200 transform hover:scale-[1.02] 
-                     focus:outline-none focus:ring-2 focus:ring-arkham-gold/50 focus:ring-offset-2 focus:ring-offset-arkham-purple
-                     shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
-                     flex items-center justify-center gap-2"
-          >
-            {isLoading ? (
-              <>
-                <LoadingSpinner size="sm" color="gold" />
-                <span>Creating Account...</span>
-              </>
-            ) : (
-              "Begin Investigation"
-            )}
-          </button>
-        </form>
+          {/* Form content */}
+          <div className="p-8">
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              {error && (
+                <div className="bg-red-100 border-2 border-red-400 text-red-800 px-4 py-3 rounded-lg text-sm font-medium">
+                  {error}
+                </div>
+              )}
 
-        <div className="mt-6 text-center">
-          <p className="text-arkham-light/60 text-sm">
-            Already have an account?{" "}
-            <button
-              onClick={onSwitchToLogin}
-              className="text-arkham-gold hover:text-arkham-gold/80 font-medium transition-colors"
-            >
-              Sign in
-            </button>
-          </p>
+              <div className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-semibold text-amber-900 mb-2"
+                  >
+                    Nombre del Investigador
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Introduce tu nombre"
+                    value={credentials.name}
+                    onChange={handleInputChange("name")}
+                    required
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-lg 
+                             text-amber-900 placeholder-amber-600 
+                             focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500
+                             transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+                             font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="signup-email"
+                    className="block text-sm font-semibold text-amber-900 mb-2"
+                  >
+                    Correo Electrónico
+                  </label>
+                  <input
+                    id="signup-email"
+                    type="email"
+                    placeholder="Introduce tu correo"
+                    value={credentials.email}
+                    onChange={handleInputChange("email")}
+                    required
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-lg 
+                             text-amber-900 placeholder-amber-600 
+                             focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500
+                             transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+                             font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="signup-password"
+                    className="block text-sm font-semibold text-amber-900 mb-2"
+                  >
+                    Contraseña
+                  </label>
+                  <input
+                    id="signup-password"
+                    type="password"
+                    placeholder="Crea una contraseña"
+                    value={credentials.password}
+                    onChange={handleInputChange("password")}
+                    required
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-lg 
+                             text-amber-900 placeholder-amber-600 
+                             focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500
+                             transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+                             font-medium"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="confirm-password"
+                    className="block text-sm font-semibold text-amber-900 mb-2"
+                  >
+                    Confirmar Contraseña
+                  </label>
+                  <input
+                    id="confirm-password"
+                    type="password"
+                    placeholder="Confirma tu contraseña"
+                    value={credentials.confirmPassword}
+                    onChange={handleInputChange("confirmPassword")}
+                    required
+                    disabled={isLoading}
+                    className="w-full px-4 py-3 bg-amber-50 border-2 border-amber-300 rounded-lg 
+                             text-amber-900 placeholder-amber-600 
+                             focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500
+                             transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
+                             font-medium"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-gradient-to-b from-amber-200 to-amber-300 hover:from-amber-300 hover:to-amber-400 
+                         border-2 border-amber-800/60 rounded-lg py-4 px-6 transition-all duration-200
+                         shadow-md hover:shadow-lg transform hover:-translate-y-0.5
+                         disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none
+                         flex items-center justify-center gap-2"
+              >
+                {isLoading ? (
+                  <>
+                    <LoadingSpinner size="sm" color="gold" />
+                    <span className="text-amber-900 font-semibold text-lg">Creando Cuenta...</span>
+                  </>
+                ) : (
+                  <span className="text-amber-900 font-semibold text-lg">Comenzar Investigación</span>
+                )}
+              </button>
+            </form>
+
+            <div className="mt-6 text-center">
+              <p className="text-amber-800 text-sm">
+                ¿Ya tienes cuenta?{" "}
+                <button
+                  onClick={onSwitchToLogin}
+                  className="text-amber-700 hover:text-amber-600 font-semibold transition-colors underline"
+                >
+                  Iniciar Sesión
+                </button>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

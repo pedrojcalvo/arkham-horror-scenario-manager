@@ -29,40 +29,46 @@ A modern web application for managing Arkham Horror scenarios and campaigns, bui
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - Supabase account
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/arkham-horror-scenario-manager.git
    cd arkham-horror-scenario-manager
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env.local
    ```
-   
+
    Update `.env.local` with your Supabase credentials:
+
    ```env
    REACT_APP_SUPABASE_URL=your_supabase_project_url
    REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
 
 4. **Configure Supabase**
+
    - In your Supabase dashboard, go to Authentication > URL Configuration
    - Set Site URL: `http://localhost:3000`
    - Add Redirect URL: `http://localhost:3000/auth/confirm`
 
 5. **Start the development server**
+
    ```bash
    npm start
    ```
@@ -91,6 +97,7 @@ src/
 ## 🎨 Design System
 
 ### Colors
+
 - **arkham-dark**: `#1a1a2e` - Primary dark background
 - **arkham-purple**: `#16213e` - Secondary dark purple
 - **arkham-blue**: `#0f3460` - Deep blue accents
@@ -98,6 +105,7 @@ src/
 - **arkham-light**: `#f5f7fa` - Light text color
 
 ### Typography
+
 - **Headers**: Creepster (horror theme)
 - **Body**: Inter (modern, readable)
 
@@ -119,12 +127,14 @@ src/
 ## 🌐 Deployment
 
 ### Vercel (Recommended)
+
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Set environment variables in Vercel dashboard
 4. Update Supabase URLs for production
 
 ### Other Platforms
+
 The app can be deployed to any static hosting service like Netlify, AWS S3, or GitHub Pages.
 
 ## 🤝 Contributing
